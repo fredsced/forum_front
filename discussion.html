@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Display discussion</title>
+</head>
+
+<body>
+
+    <h1>Discussion page</h1>
+
+    <div id="main">
+        <div id="discussion"></div>
+        <form name="formComment" id="formComment">
+            <label for="pseudo">Pseudo :</label>
+            <input type="text" name="pseudo" id="pseudo"><br>
+            <label for="comment">Comment :</label><br>
+            <textarea name="comment" id="comment" cols="70" rows="10"></textarea><br>
+            <input type="button" id="submitComment" value="submit">
+        </form>
+        <div id="tohome">
+            <a href="./index.html">Return to home page</a>
+        </div>
+
+    </div>
+    <script type="module" src="script/discussion.js"></script>
+
+</body>
+
+</html>

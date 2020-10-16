@@ -1,0 +1,19 @@
+#main {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 20px auto;
+  padding: 10px;
+  max-width: 960px;
+}
+#tohome {
+  margin-top: 20px;
+}
+h1 {
+  text-align: center;
+}
+label {
+  display: inline-block;
+  margin-top: 10px;
+}
+input button {
+  padding-top: 10px;
+}
