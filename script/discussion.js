@@ -6,17 +6,17 @@ import postComment from "./postComment.js";
 
 const submitComment = document.getElementById("submitComment");
 const formComment = document.getElementById("formComment");
-const param = getParamValue("id");
+const discussionId = getParamValue("id");
 
 submitComment.addEventListener("click", (e) => {
   e.preventDefault();
   const commentData = new FormData(formComment);
   const dataToSend = jsonifier(commentData);
-  postComment(dataToSend, param);
+  postComment(dataToSend, discussionId);
 });
 
 const options = {
-  url: API_DISCUSSIONS + "/" + param,
+  url: API_DISCUSSIONS + "/" + discussionId,
   method: "GET",
   callBack: populatePage,
   callBackOnError: router.redirectToErrorPage,
