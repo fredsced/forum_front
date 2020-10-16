@@ -5,7 +5,7 @@ import { API_DISCUSSIONS } from "./env.js";
 export default function postComment(jsonToSend, param) {
   const options = {
     url: API_DISCUSSIONS + "/" + param + "/comments",
-    method: "POST",
+    method: "PATCH",
     callBack: router.redirectToDiscussionPage,
     callBackOnError: router.redirectToErrorPage,
     body: jsonToSend,

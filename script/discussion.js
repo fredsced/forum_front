@@ -6,7 +6,8 @@ import postComment from "./postComment.js";
 
 const submitComment = document.getElementById("submitComment");
 const formComment = document.getElementById("formComment");
-const param = getParam("id");
+const param = getParamValue("id");
+
 
 submitComment.addEventListener("click", (e) => {
   e.preventDefault();
@@ -52,18 +53,10 @@ function populatePage(datas) {
 
   main.append(div);
 }
-function getParam(sVar) {
-  return unescape(
-    window.location.search.replace(
-      new RegExp(
-        "^(?:.*[&\\?]" +
-          escape(sVar).replace(/[\.\+\*]/g, "\\$&") +
-          "(?:\\=([^&]*))?)?.*$",
-        "i"
-      ),
-      "$1"
-    )
-  );
+// helper to retrieve param value in the url
+function getParamValue(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get("id");
 }
 // helper to create elements
 function createNode(element) {
