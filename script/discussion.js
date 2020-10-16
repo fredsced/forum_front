@@ -8,7 +8,6 @@ const submitComment = document.getElementById("submitComment");
 const formComment = document.getElementById("formComment");
 const param = getParamValue("id");
 
-
 submitComment.addEventListener("click", (e) => {
   e.preventDefault();
   const commentData = new FormData(formComment);
@@ -56,7 +55,7 @@ function populatePage(datas) {
 // helper to retrieve param value in the url
 function getParamValue(param) {
   const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get("id");
+  return urlParams.get(param);
 }
 // helper to create elements
 function createNode(element) {
