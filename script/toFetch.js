@@ -9,7 +9,7 @@ export default function toFetch(options) {
     .then((data) => {
       callBack(data);
     })
-    .catch((e) => {
-      callBackOnError(e);
+    .catch(() => {
+      callBackOnError();
     });
 }

@@ -8,8 +8,8 @@ const submitComment = document.getElementById("submitComment");
 const formComment = document.getElementById("formComment");
 const discussionId = getParamValue("id");
 
-submitComment.addEventListener("click", (e) => {
-  e.preventDefault();
+submitComment.addEventListener("click", (event) => {
+  event.preventDefault();
   const commentData = new FormData(formComment);
   const dataToSend = jsonifier(commentData);
   postComment(dataToSend, discussionId);
@@ -40,12 +40,12 @@ function populatePage(datas) {
   div.append(pTitle, pText, pAuthor);
 
   if (comments !== null) {
-    comments.forEach((c, index) => {
+    comments.forEach((comment, index) => {
       const numComment = createNode("h5");
       numComment.innerHTML = "Réponse # " + ++index;
       const pCommentAuthor = createNode("p");
-      pCommentAuthor.innerHTML = c.author;
-      const pCommentText = (createNode("p").innerHTML = c.text);
+      pCommentAuthor.innerHTML = comment.author;
+      const pCommentText = (createNode("p").innerHTML = comment.text);
       div.append(numComment, pCommentText, pCommentAuthor);
     });
   }
