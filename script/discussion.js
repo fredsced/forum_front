@@ -49,8 +49,8 @@ function populatePage(datas) {
       const numComment = createNode("h5");
       numComment.innerHTML = "Réponse # " + ++index;
       const pCommentAuthor = createNode("p");
-      pCommentAuthor.innerHTML = comment["author"]["pseudo"];
-      const pCommentText = (createNode("p").innerHTML = comment["text"]);
+      pCommentAuthor.innerHTML = comment.author.pseudo;
+      const pCommentText = (createNode("p").innerHTML = comment.text);
       div.append(numComment, pCommentText, pCommentAuthor);
     });
   }
