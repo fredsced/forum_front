@@ -27,7 +27,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
 });
 
 function populatePage(datas) {
-  const { title, text, author, comments } = datas;
+  const {
+    title,
+    text,
+    author: { pseudo },
+    comments,
+  } = datas;
   const main = document.getElementById("discussion");
   const div = createNode("div"),
     pTitle = createNode("h4"),
@@ -35,7 +40,7 @@ function populatePage(datas) {
     pAuthor = createNode("p");
   pTitle.innerHTML = title;
   pText.innerHTML = text;
-  pAuthor.innerHTML = author;
+  pAuthor.innerHTML = pseudo;
 
   div.append(pTitle, pText, pAuthor);
 
@@ -44,8 +49,8 @@ function populatePage(datas) {
       const numComment = createNode("h5");
       numComment.innerHTML = "Réponse # " + ++index;
       const pCommentAuthor = createNode("p");
-      pCommentAuthor.innerHTML = comment.author;
-      const pCommentText = (createNode("p").innerHTML = comment.text);
+      pCommentAuthor.innerHTML = comment["author"]["pseudo"];
+      const pCommentText = (createNode("p").innerHTML = comment["text"]);
       div.append(numComment, pCommentText, pCommentAuthor);
     });
   }
